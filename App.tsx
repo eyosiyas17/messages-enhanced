@@ -52,7 +52,7 @@ const AUTO_IMPORT_KEY = 'gemini_messages_auto_import_done';
 const AUTH_TIMEOUT = 10000; // 10 second timeout for auth
 const MAX_IMPORT_PER_CONVERSATION = 300;
 const IMPORT_CHUNK_SIZE = 50;
-const SMS_POLL_INTERVAL_MS = 5000;
+const SMS_POLL_INTERVAL_MS = 1000; // 1 second for near-instant message detection
 
 const GOOGLE_PALETTE = [
   '#3C4043', // Google Blue
@@ -98,8 +98,10 @@ const normalizePhone = (phone: string) => phone.replace(/\D/g, '');
 
 // Phone number customization system - override display names for specific numbers
 const PHONE_CUSTOMIZATIONS: Record<string, { name: string; color?: string; avatar?: string }> = {
-  '0960051565': { name: 'CBE', color: '#FF6B35', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=cbe&backgroundColor=FF6B35' },
-  '960051565': { name: 'CBE', color: '#FF6B35', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=cbe&backgroundColor=FF6B35' },
+  '+251996990039': { name: 'CBE', color: '#FF6B35', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=cbe&backgroundColor=FF6B35' },
+  '+251 99 699 0039': { name: 'CBE', color: '#FF6B35', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=cbe&backgroundColor=FF6B35' },
+  // Normalized versions (without + and spaces) for proper matching
+  '251996990039': { name: 'CBE', color: '#FF6B35', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=cbe&backgroundColor=FF6B35' },
   // Add more customizations as needed
   // '0912345678': { name: 'Bank Name', color: '#4CAF50' },
 };
