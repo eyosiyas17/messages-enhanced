@@ -98,10 +98,10 @@ const normalizePhone = (phone: string) => phone.replace(/\D/g, '');
 
 // Phone number customization system - override display names for specific numbers
 const PHONE_CUSTOMIZATIONS: Record<string, { name: string; color?: string; avatar?: string }> = {
-  '+251960051565': { name: 'CBE', color: '#FF6B35', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=cbe&backgroundColor=FF6B35' },
-  '+251 960051565': { name: 'CBE', color: '#FF6B35', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=cbe&backgroundColor=FF6B35' },
+  '+251996990039': { name: 'CBE', color: '#FF6B35', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=cbe&backgroundColor=FF6B35' },
+  '+251 99 699 0039': { name: 'CBE', color: '#FF6B35', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=cbe&backgroundColor=FF6B35' },
   // Normalized versions (without + and spaces) for proper matching
-  '251960051565': { name: 'CBE', color: '#FF6B35', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=cbe&backgroundColor=FF6B35' },
+  '251996990039': { name: 'CBE', color: '#FF6B35', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=cbe&backgroundColor=FF6B35' },
   // Add more customizations as needed
   // '0912345678': { name: 'Bank Name', color: '#4CAF50' },
 };
