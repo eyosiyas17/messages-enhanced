@@ -10,8 +10,13 @@ public class MainActivity extends BridgeActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-       
-        registerPlugin(SMSPlugin.class);
+        // Register SMS plugin
+        try {
+            registerPlugin(com.google.messages.clone.SMSPlugin.class);
+        } catch (Exception e) {
+            // Plugin registration failed, but continue with app startup
+            System.err.println("Failed to register SMSPlugin: " + e.getMessage());
+        }
     }
 
     @Override
